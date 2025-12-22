@@ -37,7 +37,7 @@ async function handleFiles(files) {
     formData.append('file', file);
 
     try {
-        const response = await fetch('http://localhost:3000/api/ingest', {
+        const response = await fetch('https://chatbot-backend1-4qy2.onrender.com/api/ingest', {
             method: 'POST',
             body: formData
         });
@@ -69,7 +69,7 @@ async function sendMessage() {
     const loadingId = addMessage('Thinking...', 'bot');
 
     try {
-        const response = await fetch('http://localhost:3000/api/chat', {
+        const response = await fetch('https://chatbot-backend1-4qy2.onrender.com/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message: text })
