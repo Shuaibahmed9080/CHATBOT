@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Chatbot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RAG Chatbot</h1>
+            <p>Upload documents and ask questions based on their content.</p>
+        </header>
+
+        <main>
+            <section class="upload-section">
+                <h2>Knowledge Base</h2>
+                <div class="upload-area" id="drop-zone">
+                    <p>Drag & Drop files here or</p>
+                    <input type="file" id="file-input" hidden>
+                    <button class="btn secondary" id="browse-btn">Browse Files</button>
+                    <div id="upload-status"></div>
+                </div>
+            </section>
+
+            <section class="chat-section">
+                <div class="chat-window" id="chat-window">
+                    <div class="message bot">
+                        <div class="bubble">Hello! Upload a document to get started, then verify.</div>
+                    </div>
+                </div>
+                <div class="input-area">
+                    <input type="text" id="user-input" placeholder="Ask a question about your documents...">
+                    <button class="btn primary" id="send-btn">Send</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
