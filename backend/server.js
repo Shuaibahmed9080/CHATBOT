@@ -1,7 +1,13 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import apiRoutes from './routes/api.js';
+import apiRoutes from './src/routes/api.js';
+
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config();
 
@@ -12,12 +18,11 @@ const PORT = process.env.PORT || 3000;
 app.use(cors()); // Allow all origins for now
 app.use(express.json());
 
+
 // Routes
 app.use('/api', apiRoutes);
 
-app.get('/', (req, res) => {
-    res.send('RAG Chatbot API is running');
-});
+
 
 // Start Server
 app.listen(PORT, () => {
