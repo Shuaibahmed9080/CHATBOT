@@ -37,7 +37,11 @@ async function handleFiles(files) {
     formData.append('file', file);
 
     try {
+<<<<<<< HEAD
         const response = await fetch(`${API_BASE_URL}/ingest`, {
+=======
+        const response = await fetch('https://chatbot-backend1-4qy2.onrender.com/api/ingest', {
+>>>>>>> 6f1b43025ba28b3d6205482916f911fb5903b9dc
             method: 'POST',
             body: formData
         });
@@ -69,7 +73,11 @@ async function sendMessage() {
     const loadingId = addMessage('Thinking...', 'bot');
 
     try {
+<<<<<<< HEAD
         const response = await fetch(`${API_BASE_URL}/chat`, {
+=======
+        const response = await fetch('https://chatbot-backend1-4qy2.onrender.com/api/chat', {
+>>>>>>> 6f1b43025ba28b3d6205482916f911fb5903b9dc
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message: text })
