@@ -107,6 +107,44 @@ async function sendMessage() {
   }
 }
 
+// ******************
+// i newly added
+// =======================
+// Predefined Topic Logic
+// =======================
+
+async function sendPredefinedTopic(topic) {
+  addMessage(topic, "user");
+
+  const loadingId = addMessage("Thinking...", "bot");
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/chat`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ topic }) // 👈 important
+    });
+
+    const data = await response.json();
+    removeMessage(loadingId);
+
+    if (data.answer) {
+      addMessage(data.answer, "bot");
+    } else {
+      addMessage("I couldn't generate an answer.", "bot");
+    }
+  } catch (error) {
+    console.error(error);
+    removeMessage(loadingId);
+    addMessage("Error connecting to server.", "bot");
+  }
+}
+
+
+// ***************
+
 /* =======================
    Helpers
 ======================= */

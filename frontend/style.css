@@ -193,3 +193,153 @@ input[type="text"]:focus {
     font-size: 0.8rem;
     color: var(--text-light);
 }
+/* =========================
+   Predefined Topic Options
+========================= */
+
+.predefined-topics {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    background: #f9fafb;
+}
+
+.topic-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.topic-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 8px;
+}
+
+.topic-item {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 0.9rem;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.topic-item:hover {
+    border-color: var(--primary);
+    background: #eef2ff;
+    color: var(--primary-hover);
+}
+
+/* Optional: active effect (future use) */
+.topic-item:active {
+    transform: scale(0.98);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* ---------- Tablets (≤ 1024px) ---------- */
+@media (max-width: 1024px) {
+  .container {
+    width: 95%;
+    height: 95vh;
+  }
+
+  .upload-section {
+    width: 260px;
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+}
+
+/* ---------- Mobile (≤ 768px) ---------- */
+@media (max-width: 768px) {
+  body {
+    height: auto;
+    padding: 10px;
+  }
+
+  .container {
+    height: auto;
+    min-height: 100vh;
+    border-radius: 10px;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  /* Upload section moves to top */
+  .upload-section {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .chat-section {
+    flex: 1;
+  }
+
+  .chat-window {
+    padding: 15px;
+  }
+
+  .message {
+    max-width: 100%;
+  }
+
+  .input-area {
+    padding: 15px;
+  }
+
+  input[type="text"] {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 10px 14px;
+  }
+
+  /* Topics responsive */
+  .predefined-topics {
+    padding: 12px 15px;
+  }
+
+  .topic-item {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+}
+
+/* ---------- Small Mobile (≤ 480px) ---------- */
+@media (max-width: 480px) {
+  header {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 1.1rem;
+  }
+
+  header p {
+    font-size: 0.8rem;
+  }
+
+  .upload-area {
+    padding: 20px 15px;
+  }
+
+  .bubble {
+    font-size: 0.85rem;
+  }
+
+  .topic-title {
+    font-size: 0.8rem;
+  }
+}
